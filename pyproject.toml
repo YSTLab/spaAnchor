@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spaAnchor"
+version = "1.0"
+description = "spaAnchor transfers molecular features between spatial omics slices using shared features as anchors."
+readme = "README.md" 
+requires-python = ">=3.9, <3.13"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Han Shu"}
+]
+dependencies = [
+    "einops",
+    "harmony-pytorch",
+    "matplotlib",
+    "numpy<2.0",
+    "opencv-python",
+    "pandas",
+    "scanpy",
+    "scikit-image",
+    "scikit-learn",
+    "scikit-misc",
+    "spatialdata",
+    "spatialdata-io",
+    "tifffile",
+    "torch",
+    "torch-geometric",
+    "torchvision"
+]
+
+[project.urls]
+Documentation = "https://spaanchor.readthedocs.io"
+Source = "https://github.com/ystlab/spaAnchor"
+
+[project.optional-dependencies]
+gpu = ["faiss-gpu-cu12"]
+cpu = ["faiss-cpu"]
+
+[tool.setuptools.packages.find]
+where = ["."]
